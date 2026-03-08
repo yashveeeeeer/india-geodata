@@ -5,7 +5,7 @@
 
 A unified, structured collection of India's openly-licensed geospatial data — administrative boundaries, electoral maps, census geometries, environmental zones, infrastructure networks, urban municipal data, and more.
 
-Browse and download at **[india-geodata](https://{owner}.github.io/india-geodata)**
+Browse and download at **[india-geodata](https://yashveeeeeer.github.io/india-geodata)**
 
 ---
 
@@ -130,7 +130,7 @@ Individual datasets carry their own licenses as documented in their
   title = {India Geodata: Unified Geospatial Data Repository},
   year = {2026},
   publisher = {GitHub},
-  url = {https://github.com/{owner}/india-geodata}
+  url = {https://github.com/yashveeeeeer/india-geodata}
 }
 ```
 
