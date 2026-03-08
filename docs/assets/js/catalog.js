@@ -68,6 +68,16 @@
 
   // --- Expand / Collapse ---
   document.addEventListener('click', function (e) {
+    var expandBtn = e.target.closest('.expand-card-btn');
+    if (expandBtn) {
+      var card = expandBtn.closest('.dataset-card');
+      if (card) {
+        card.classList.toggle('expanded');
+        expandBtn.textContent = card.classList.contains('expanded') ? 'Download ▴' : 'Download ▾';
+      }
+      return;
+    }
+
     var header = e.target.closest('.dataset-header');
     var toggle = e.target.closest('.expand-toggle');
     if (!header && !toggle) return;

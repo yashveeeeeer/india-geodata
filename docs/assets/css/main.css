@@ -302,6 +302,16 @@ main { flex: 1; }
 .release-link a { color: var(--color-accent); }
 .release-link a:hover { text-decoration: underline; }
 
+/* --- Release Download Box (for datasets without individual files) --- */
+.release-download-box {
+  padding: 16px 0;
+  font-size: 0.88rem;
+  color: var(--color-text);
+}
+.release-download-box p { margin-bottom: 8px; }
+.release-download-actions { margin: 10px 0; }
+.release-hint { font-size: 0.8rem; color: var(--color-muted); margin-top: 4px; }
+
 /* --- Footer --- */
 .site-footer {
   background: var(--color-primary);

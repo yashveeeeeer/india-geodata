@@ -7,7 +7,6 @@ title: Home
 
 {% assign cat_labels = "Administrative Boundaries,Electoral Boundaries,Census,Environment,Infrastructure,Urban,Postal,Police,Survey of India,Remote Sensing,External Datasets" | split: "," %}
 
-{% assign cat_summaries = "Country, state, district, subdistrict, block, panchayat, village, and habitation boundaries from LGD, SOI, and Bhuvan.|Assembly and parliamentary constituency boundaries from the Election Commission.|Census 2011 admin-unit geometries and historical district boundary series (1941–2024).|Forest cover, coastal regulation zones, and land use classification maps.|PMGSY rural road network and habitation point data from GeoSadak.|Municipal ward boundaries, slum areas, ULB boundaries, and locality maps for 28 cities.|India Post pincode polygon boundaries.|Police station jurisdiction boundaries for select states.|SOI topographic index maps, outline maps, and reference boundaries.|Satellite-derived district-level nighttime light data (VIIRS, 2012–2024).|Curated links to external open-data platforms." | split: "|" %}
 
 <section class="hero">
   <div class="hero-inner">
@@ -47,7 +46,6 @@ title: Home
       {% if cat_items.size > 0 %}
       <div class="category-group" data-group="{{ cat }}" id="{{ cat }}">
         <h2 class="category-heading">{{ cat_labels[forloop.index0] }}</h2>
-        <p class="category-summary">{{ cat_summaries[forloop.index0] }}</p>
 
         {% for item in cat_items %}
         <div class="dataset-card"
@@ -78,9 +76,7 @@ title: Home
               <a href="{{ item.external_docs }}" class="btn btn-github" target="_blank" rel="noopener">Documentation</a>
               {% endif %}
             {% else %}
-              {% if item.release_url %}
-              <a href="{{ item.release_url }}" class="btn btn-download" target="_blank" rel="noopener">Download</a>
-              {% endif %}
+              <button class="btn btn-download expand-card-btn" type="button">Download ▾</button>
               <a href="https://github.com/yashveeeeeer/india-geodata/tree/main/{{ item.url }}" class="btn btn-github" target="_blank" rel="noopener">Browse Files</a>
               {% if item.name == "nightlights-viirs" %}
               <a href="https://github.com/yashveeeeeer/india-district-nightlights-viirs" class="btn btn-github" target="_blank" rel="noopener">Source Repo</a>
@@ -115,9 +111,20 @@ title: Home
             {% endif %}
             {% else %}
               {% if item.release_url %}
-              <p class="release-link"><a href="{{ item.release_url }}" target="_blank" rel="noopener">View all files on GitHub Releases &rarr;</a></p>
+              <div class="release-download-box">
+                <p>Download available formats from GitHub Releases:</p>
+                <div class="release-download-actions">
+                  <a href="{{ item.release_url }}" class="btn btn-download" target="_blank" rel="noopener">Go to Release Page</a>
+                </div>
+                <p class="release-hint">The release page lists all available file formats (Parquet, GeoJSON, Shapefile, etc.) for direct download.</p>
+              </div>
               {% else %}
-              <p class="release-link"><a href="https://github.com/yashveeeeeer/india-geodata/tree/main/{{ item.url }}" target="_blank">Browse files on GitHub &rarr;</a></p>
+              <div class="release-download-box">
+                <p>Browse and download files from the repository:</p>
+                <div class="release-download-actions">
+                  <a href="https://github.com/yashveeeeeer/india-geodata/tree/main/{{ item.url }}" class="btn btn-download" target="_blank" rel="noopener">Browse on GitHub</a>
+                </div>
+              </div>
               {% endif %}
             {% endif %}
           </div>
