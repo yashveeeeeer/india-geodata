@@ -33,6 +33,10 @@
   },
   "formats": ["csv", "geojson"],
   "coordinate_system": "EPSG:4326",
+  "storage": {
+    "repo_files": true,
+    "release_tag": "remote-sensing/nightlights"
+  },
   "files": [
     {
       "filename": "nightlights_district_panel.csv",

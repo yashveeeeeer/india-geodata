@@ -78,9 +78,19 @@ def validate_formats(formats, errors):
 
 
 def validate_storage(storage, errors):
-    """Validate the storage section of metadata."""
+    """Validate the storage section of metadata.
+
+    Accepts either:
+    - A dict with 'repo_files' (bool) and 'release_tag' (string/null)
+    - A string value: 'repo', 'release', 'both', or 'external'
+    """
+    if isinstance(storage, str):
+        valid_values = {"repo", "release", "both", "external"}
+        if storage not in valid_values:
+            errors.append(f"'storage' string must be one of {valid_values}, got '{storage}'")
+        return
     if not isinstance(storage, dict):
-        errors.append("'storage' must be a dict")
+        errors.append("'storage' must be a dict or a string")
         return
     if "repo_files" not in storage:
         errors.append("'storage' missing required field 'repo_files'")
