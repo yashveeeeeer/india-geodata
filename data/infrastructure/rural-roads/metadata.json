@@ -1,7 +1,7 @@
 {
   "name": "infra-rural-roads",
   "title": "Rural Roads (PMGSY)",
-  "description": "Rural road network data from the Pradhan Mantri Gram Sadak Yojana program.",
+  "description": "Rural road network lines and habitation point data from the PMGSY/GeoSadak program covering 29 states with road type, surface, and connectivity attributes.",
   "category": "infrastructure",
   "level": "rural-roads",
   "coverage": {
@@ -21,7 +21,10 @@
     "name": "Open Government Licence - India",
     "url": "https://data.gov.in/government-open-data-license-india"
   },
-  "formats": ["shapefile", "zip"],
+  "formats": [
+    "shapefile",
+    "zip"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": true,

@@ -1,7 +1,7 @@
 {
   "name": "admin-habitations",
   "title": "Habitations",
-  "description": "Point locations and boundaries of habitations across India.",
+  "description": "Point locations and boundary polygons for 600,000+ habitations (hamlets and settlements) mapped under PMGSY and the National Habitation Survey.",
   "category": "administrative",
   "level": "habitation",
   "coverage": {
@@ -10,16 +10,33 @@
     "admin_level": 7
   },
   "sources": [
-    { "name": "PMGSY (OMMAS)", "url": "https://omms.nic.in/", "authority": "Ministry of Rural Development" },
-    { "name": "Bhuvan", "url": "https://bhuvan.nrsc.gov.in/", "authority": "ISRO/NRSC" },
-    { "name": "National Habitation Survey", "url": "https://habitation.gov.in/", "authority": "Ministry of Drinking Water and Sanitation" }
+    {
+      "name": "PMGSY (OMMAS)",
+      "url": "https://omms.nic.in/",
+      "authority": "Ministry of Rural Development"
+    },
+    {
+      "name": "Bhuvan",
+      "url": "https://bhuvan.nrsc.gov.in/",
+      "authority": "ISRO/NRSC"
+    },
+    {
+      "name": "National Habitation Survey",
+      "url": "https://habitation.gov.in/",
+      "authority": "Ministry of Drinking Water and Sanitation"
+    }
   ],
   "license": {
     "id": "CC0-1.0",
     "name": "Creative Commons Zero",
     "url": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
-  "formats": ["parquet", "pmtiles", "geojsonl.7z", "shapefile"],
+  "formats": [
+    "parquet",
+    "pmtiles",
+    "geojsonl.7z",
+    "shapefile"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": false,

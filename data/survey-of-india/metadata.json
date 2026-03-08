@@ -1,7 +1,7 @@
 {
   "name": "soi-reference",
   "title": "Survey of India Reference Data",
-  "description": "Reference maps and boundary data from the Survey of India.",
+  "description": "Survey of India topographic index maps, outline maps, and administrative reference boundaries — the authoritative cartographic source for India.",
   "category": "survey-of-india",
   "level": "reference",
   "coverage": {
@@ -10,15 +10,26 @@
     "admin_level": null
   },
   "sources": [
-    { "name": "Survey of India", "url": "https://onlinemaps.surveyofindia.gov.in/", "authority": "Survey of India" },
-    { "name": "DataMeet", "url": "https://github.com/datameet/maps", "authority": "DataMeet Community" }
+    {
+      "name": "Survey of India",
+      "url": "https://onlinemaps.surveyofindia.gov.in/",
+      "authority": "Survey of India"
+    },
+    {
+      "name": "DataMeet",
+      "url": "https://github.com/datameet/maps",
+      "authority": "DataMeet Community"
+    }
   ],
   "license": {
     "id": "CC-BY-4.0",
     "name": "Creative Commons Attribution 4.0",
     "url": "https://creativecommons.org/licenses/by/4.0/"
   },
-  "formats": ["shapefile", "pdf"],
+  "formats": [
+    "shapefile",
+    "pdf"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": true,

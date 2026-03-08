@@ -1,7 +1,7 @@
 {
   "name": "admin-blocks",
   "title": "Blocks (Community Development Blocks)",
-  "description": "Boundaries of all community development blocks of India.",
+  "description": "Polygon boundaries of community development blocks — the primary rural administrative unit below the district level. Sourced from LGD, PMGSY, and Bhuvan.",
   "category": "administrative",
   "level": "block",
   "coverage": {
@@ -10,16 +10,33 @@
     "admin_level": 4
   },
   "sources": [
-    { "name": "Local Government Directory", "url": "https://lgdirectory.gov.in/", "authority": "Ministry of Panchayati Raj" },
-    { "name": "PMGSY (OMMAS)", "url": "https://omms.nic.in/", "authority": "Ministry of Rural Development" },
-    { "name": "Bhuvan", "url": "https://bhuvan.nrsc.gov.in/", "authority": "ISRO/NRSC" }
+    {
+      "name": "Local Government Directory",
+      "url": "https://lgdirectory.gov.in/",
+      "authority": "Ministry of Panchayati Raj"
+    },
+    {
+      "name": "PMGSY (OMMAS)",
+      "url": "https://omms.nic.in/",
+      "authority": "Ministry of Rural Development"
+    },
+    {
+      "name": "Bhuvan",
+      "url": "https://bhuvan.nrsc.gov.in/",
+      "authority": "ISRO/NRSC"
+    }
   ],
   "license": {
     "id": "CC0-1.0",
     "name": "Creative Commons Zero",
     "url": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
-  "formats": ["parquet", "pmtiles", "geojsonl.7z", "shapefile"],
+  "formats": [
+    "parquet",
+    "pmtiles",
+    "geojsonl.7z",
+    "shapefile"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": false,

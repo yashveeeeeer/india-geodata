@@ -1,7 +1,7 @@
 {
   "name": "env-landuse",
   "title": "Land Use / Land Cover",
-  "description": "Land use and land cover classification data for India.",
+  "description": "Land use and land cover (LULC) classification polygons for India covering cropland, forest, built-up, water, and barren categories. From Esri.",
   "category": "environment",
   "level": "landuse",
   "coverage": {
@@ -21,7 +21,10 @@
     "name": "Creative Commons Attribution-ShareAlike 2.5",
     "url": "https://creativecommons.org/licenses/by-sa/2.5/"
   },
-  "formats": ["geojson", "shapefile"],
+  "formats": [
+    "geojson",
+    "shapefile"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": true,

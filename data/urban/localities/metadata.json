@@ -1,7 +1,7 @@
 {
   "name": "urban-localities",
   "title": "Urban Localities",
-  "description": "Locality-level boundaries and points within urban areas of India.",
+  "description": "Neighbourhood and locality-level boundaries and point locations within select Indian cities. From Delhi GIS and AMRUT Smart Cities data.",
   "category": "urban",
   "level": "locality",
   "coverage": {
@@ -10,15 +10,28 @@
     "admin_level": null
   },
   "sources": [
-    { "name": "Geo-Spatial Delhi Limited (GSDL)", "url": "https://gsdl.org.in/", "authority": "Delhi Government" },
-    { "name": "AMRUT", "url": "https://amrut.gov.in/", "authority": "Ministry of Housing and Urban Affairs" }
+    {
+      "name": "Geo-Spatial Delhi Limited (GSDL)",
+      "url": "https://gsdl.org.in/",
+      "authority": "Delhi Government"
+    },
+    {
+      "name": "AMRUT",
+      "url": "https://amrut.gov.in/",
+      "authority": "Ministry of Housing and Urban Affairs"
+    }
   ],
   "license": {
     "id": "CC0-1.0",
     "name": "Creative Commons Zero",
     "url": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
-  "formats": ["parquet", "pmtiles", "geojsonl.7z", "shapefile"],
+  "formats": [
+    "parquet",
+    "pmtiles",
+    "geojsonl.7z",
+    "shapefile"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": false,

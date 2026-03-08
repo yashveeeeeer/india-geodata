@@ -1,7 +1,7 @@
 {
   "name": "admin-divisions",
   "title": "Revenue Divisions",
-  "description": "Boundaries of revenue divisions of India.",
+  "description": "Revenue division boundaries used in some states as an intermediate tier between state and district. From DataMeet.",
   "category": "administrative",
   "level": "division",
   "coverage": {
@@ -21,7 +21,9 @@
     "name": "Creative Commons Attribution 4.0",
     "url": "https://creativecommons.org/licenses/by/4.0/"
   },
-  "formats": ["topojson"],
+  "formats": [
+    "topojson"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": true,

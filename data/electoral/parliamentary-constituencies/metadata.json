@@ -1,7 +1,7 @@
 {
   "name": "electoral-pc",
   "title": "Parliamentary Constituencies",
-  "description": "Boundaries of Lok Sabha parliamentary constituencies of India.",
+  "description": "Polygon boundaries of all 543 Lok Sabha parliamentary constituencies based on the latest delimitation. From the Election Commission of India and DataMeet.",
   "category": "electoral",
   "level": "parliamentary-constituency",
   "coverage": {
@@ -10,16 +10,33 @@
     "admin_level": null
   },
   "sources": [
-    { "name": "Election Commission of India", "url": "https://eci.gov.in/", "authority": "Election Commission of India" },
-    { "name": "DataMeet", "url": "https://github.com/datameet/maps", "authority": "DataMeet Community" },
-    { "name": "Local Government Directory", "url": "https://lgdirectory.gov.in/", "authority": "Ministry of Panchayati Raj" }
+    {
+      "name": "Election Commission of India",
+      "url": "https://eci.gov.in/",
+      "authority": "Election Commission of India"
+    },
+    {
+      "name": "DataMeet",
+      "url": "https://github.com/datameet/maps",
+      "authority": "DataMeet Community"
+    },
+    {
+      "name": "Local Government Directory",
+      "url": "https://lgdirectory.gov.in/",
+      "authority": "Ministry of Panchayati Raj"
+    }
   ],
   "license": {
     "id": "CC0-1.0 / CC-BY-4.0",
     "name": "Creative Commons Zero / Creative Commons Attribution 4.0",
     "url": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
-  "formats": ["parquet", "pmtiles", "geojsonl.7z", "shapefile"],
+  "formats": [
+    "parquet",
+    "pmtiles",
+    "geojsonl.7z",
+    "shapefile"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": true,

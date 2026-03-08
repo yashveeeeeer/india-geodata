@@ -1,7 +1,7 @@
 {
   "name": "police-jurisdictions",
   "title": "Police Station Jurisdictions",
-  "description": "Boundaries of police station jurisdictions across Indian states.",
+  "description": "Police station jurisdiction boundaries for select Indian states, useful for crime mapping and law enforcement analysis. From state GIS portals via Bharatmaps.",
   "category": "police",
   "level": "police-station",
   "coverage": {
@@ -21,7 +21,12 @@
     "name": "Creative Commons Zero",
     "url": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
-  "formats": ["parquet", "pmtiles", "geojsonl.7z", "shapefile"],
+  "formats": [
+    "parquet",
+    "pmtiles",
+    "geojsonl.7z",
+    "shapefile"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": false,

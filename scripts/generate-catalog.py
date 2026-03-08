@@ -20,6 +20,7 @@ import argparse
 import glob
 import json
 import os
+import subprocess
 import sys
 
 try:
@@ -38,6 +39,48 @@ RAW_BASE = f"{GITHUB_BASE}/raw/main"
 RELEASE_BASE = f"{GITHUB_BASE}/releases/download"
 
 SKIP_FILES = {"metadata.json", "README.md", ".gitkeep", "Thumbs.db", ".DS_Store"}
+
+_release_cache = {}
+
+
+def fetch_release_assets(release_tag):
+    """Fetch release assets from GitHub using the gh CLI.
+
+    Returns a list of dicts with name, size (bytes), and download URL,
+    or an empty list if the gh CLI is unavailable or the release is not found.
+    """
+    if release_tag in _release_cache:
+        return _release_cache[release_tag]
+
+    try:
+        result = subprocess.run(
+            [
+                "gh", "release", "view", release_tag,
+                "--repo", f"{GITHUB_OWNER}/{GITHUB_REPO}",
+                "--json", "assets",
+                "--jq", ".assets[] | {name, size, url: .url}",
+            ],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode != 0:
+            print(f"  WARNING: gh release view {release_tag} failed: {result.stderr.strip()}", file=sys.stderr)
+            _release_cache[release_tag] = []
+            return []
+
+        assets = []
+        for line in result.stdout.strip().splitlines():
+            if line:
+                assets.append(json.loads(line))
+        _release_cache[release_tag] = assets
+        return assets
+    except FileNotFoundError:
+        print("WARNING: gh CLI not found — release assets will not be fetched.", file=sys.stderr)
+        _release_cache[release_tag] = []
+        return []
+    except subprocess.TimeoutExpired:
+        print(f"  WARNING: gh release view {release_tag} timed out.", file=sys.stderr)
+        _release_cache[release_tag] = []
+        return []
 
 
 def human_size(size_bytes):
@@ -159,8 +202,28 @@ def build_file_list(metadata, dataset_dir, dataset_rel_path):
             result.append(entry)
         return result
 
-    # No files in metadata — scan the directory
-    return scan_directory_files(dataset_dir, dataset_rel_path)
+    # No files in metadata — scan the directory first
+    local_files = scan_directory_files(dataset_dir, dataset_rel_path)
+    if local_files:
+        return local_files
+
+    # No local data files either — try fetching from GitHub Releases
+    if release_tag:
+        assets = fetch_release_assets(release_tag)
+        if assets:
+            print(f"  Fetched {len(assets)} release asset(s) for tag '{release_tag}'")
+            return [
+                {
+                    "name": a["name"],
+                    "format": get_format_from_filename(a["name"]),
+                    "size": human_size(a["size"]),
+                    "storage": "release",
+                    "download_url": a["url"],
+                }
+                for a in assets
+            ]
+
+    return []
 
 
 def extract_level(metadata, dataset_rel_path):

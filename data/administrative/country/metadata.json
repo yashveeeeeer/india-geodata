@@ -1,7 +1,7 @@
 {
   "name": "admin-country",
   "title": "India Country Boundary",
-  "description": "National boundary of India.",
+  "description": "National boundary polygon of India including composite, SOI, and OSM variants plus disputed territory boundaries. From DataMeet.",
   "category": "administrative",
   "level": "country",
   "coverage": {
@@ -21,7 +21,9 @@
     "name": "Creative Commons Attribution 4.0",
     "url": "https://creativecommons.org/licenses/by/4.0/"
   },
-  "formats": ["geojson"],
+  "formats": [
+    "geojson"
+  ],
   "coordinate_system": "EPSG:4326",
   "storage": {
     "repo_files": true,
