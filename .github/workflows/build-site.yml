@@ -6,10 +6,15 @@ on:
     paths:
       - 'docs/**'
       - 'data/**/metadata.json'
+  workflow_dispatch:
 
 permissions:
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -21,7 +26,22 @@ jobs:
           python-version: '3.12'
       - run: pip install pyyaml
       - run: python scripts/generate-catalog.py
+      - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:
           source: docs
-      - uses: actions/deploy-pages@v4
+          destination: ./_site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
