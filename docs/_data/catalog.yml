@@ -1,6 +1,7 @@
 - name: admin-blocks
   title: Blocks (Community Development Blocks)
-  description: Boundaries of all community development blocks of India.
+  description: Polygon boundaries of community development blocks — the primary rural
+    administrative unit below the district level. Sourced from LGD, PMGSY, and Bhuvan.
   category: administrative
   level: block
   formats:
@@ -16,7 +17,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/admin/blocks
 - name: admin-country
   title: India Country Boundary
-  description: National boundary of India.
+  description: National boundary polygon of India including composite, SOI, and OSM
+    variants plus disputed territory boundaries. From DataMeet.
   category: administrative
   level: country
   formats:
@@ -68,7 +70,8 @@
     download_url: https://github.com/yashveeeeeer/india-geodata/raw/main/data/administrative/country/disputed/shaksgam-ne.geojson
 - name: admin-districts
   title: Districts
-  description: Boundaries of all districts of India.
+  description: Polygon boundaries for all districts of India with Census 2001 and
+    2011 delineations. Sourced from LGD, Survey of India, Bhuvan, and DataMeet.
   category: administrative
   level: district
   formats:
@@ -149,7 +152,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/admin/districts
 - name: admin-divisions
   title: Revenue Divisions
-  description: Boundaries of revenue divisions of India.
+  description: Revenue division boundaries used in some states as an intermediate
+    tier between state and district. From DataMeet.
   category: administrative
   level: division
   formats:
@@ -241,7 +245,8 @@
     download_url: https://github.com/yashveeeeeer/india-geodata/raw/main/data/administrative/divisions/tamilnadu.topo.json
 - name: admin-habitations
   title: Habitations
-  description: Point locations and boundaries of habitations across India.
+  description: Point locations and boundary polygons for 600,000+ habitations (hamlets
+    and settlements) mapped under PMGSY and the National Habitation Survey.
   category: administrative
   level: habitation
   formats:
@@ -257,8 +262,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/admin/habitations
 - name: admin-panchayats
   title: Gram Panchayats
-  description: Boundaries of gram panchayats (local self-government bodies) across
-    India.
+  description: Polygon boundaries of gram panchayats — India's village-level local
+    self-government units. Sourced from LGD, Bhuvan, and eGramSwaraj.
   category: administrative
   level: panchayat
   formats:
@@ -274,7 +279,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/admin/panchayats
 - name: admin-states
   title: States and Union Territories
-  description: Boundaries of all states and union territories of India.
+  description: Polygon boundaries of all 36 states and union territories of India.
+    Sourced from LGD, Survey of India, Bhuvan, and DataMeet.
   category: administrative
   level: state
   formats:
@@ -315,7 +321,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/admin/states
 - name: admin-subdistricts
   title: Sub-Districts (Tehsils/Talukas)
-  description: Boundaries of all sub-districts (tehsils, talukas, mandals) of India.
+  description: Boundaries of all tehsils, talukas, and mandals — the administrative
+    tier between district and block. From LGD and Survey of India.
   category: administrative
   level: subdistrict
   formats:
@@ -331,7 +338,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/admin/subdistricts
 - name: admin-villages
   title: Villages
-  description: Boundaries of all census villages of India.
+  description: Polygon boundaries for all census villages of India — the smallest
+    administrative unit with defined boundaries. From LGD, Survey of India, and Bhuvan.
   category: administrative
   level: village
   formats:
@@ -347,8 +355,9 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/admin/villages
 - name: census-2011
   title: Census 2011 Boundaries and Data
-  description: Administrative boundaries and demographic data from the 2011 Census
-    of India.
+  description: Administrative unit geometries and demographic tables from the 2011
+    Census of India, including district and sub-district polygons. From the Registrar
+    General and SHRUG.
   category: census
   level: census-2011
   formats:
@@ -364,8 +373,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/census/2011
 - name: census-historical
   title: Historical Census Data
-  description: Historical census boundaries and population data from pre-2011 census
-    rounds.
+  description: Historical district boundary series spanning 1951–2001 census rounds,
+    enabling long-run spatial analysis of demographic change across India.
   category: census
   level: historical
   formats:
@@ -400,7 +409,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/census/historical
 - name: electoral-ac
   title: Assembly Constituencies
-  description: Boundaries of state legislative assembly constituencies of India.
+  description: Polygon boundaries of state legislative assembly constituencies based
+    on the latest delimitation. From the Election Commission of India and DataMeet.
   category: electoral
   level: assembly-constituency
   formats:
@@ -891,7 +901,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/electoral/constituencies
 - name: electoral-pc
   title: Parliamentary Constituencies
-  description: Boundaries of Lok Sabha parliamentary constituencies of India.
+  description: Polygon boundaries of all 543 Lok Sabha parliamentary constituencies
+    based on the latest delimitation. From the Election Commission of India and DataMeet.
   category: electoral
   level: parliamentary-constituency
   formats:
@@ -1472,7 +1483,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/electoral/constituencies
 - name: env-coastal
   title: Coastal Zone Boundaries
-  description: Coastal regulation zones and shoreline boundaries of India.
+  description: Coastal Regulation Zone (CRZ) boundaries and shoreline delineations
+    for India's coastline. From NCSCM (MoEFCC) and Bharatmaps.
   category: environment
   level: coastal
   formats:
@@ -1488,7 +1500,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/environment/coastal
 - name: env-forests
   title: Forest Boundaries
-  description: Forest cover and reserve forest boundaries across India.
+  description: Forest cover maps and reserve/protected forest boundaries (2021–2024)
+    from the Forest Survey of India, PM GatiShakti, and Survey of India.
   category: environment
   level: forests
   formats:
@@ -1504,7 +1517,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/environment/forests
 - name: env-landuse
   title: Land Use / Land Cover
-  description: Land use and land cover classification data for India.
+  description: Land use and land cover (LULC) classification polygons for India covering
+    cropland, forest, built-up, water, and barren categories. From Esri.
   category: environment
   level: landuse
   formats:
@@ -1551,7 +1565,8 @@
   files: []
 - name: infra-rural-roads
   title: Rural Roads (PMGSY)
-  description: Rural road network data from the Pradhan Mantri Gram Sadak Yojana program.
+  description: Rural road network lines and habitation point data from the PMGSY/GeoSadak
+    program covering 29 states with road type, surface, and connectivity attributes.
   category: infrastructure
   level: rural-roads
   formats:
@@ -2265,7 +2280,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/infra/rural-roads-large
 - name: police-jurisdictions
   title: Police Station Jurisdictions
-  description: Boundaries of police station jurisdictions across Indian states.
+  description: Police station jurisdiction boundaries for select Indian states, useful
+    for crime mapping and law enforcement analysis. From state GIS portals via Bharatmaps.
   category: police
   level: police-station
   formats:
@@ -2281,8 +2297,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/police/jurisdictions
 - name: postal-pincodes
   title: Postal PIN Code Boundaries
-  description: Approximate boundaries and point locations for postal PIN codes of
-    India.
+  description: Approximate polygon boundaries and point locations for India's 6-digit
+    postal PIN codes. From DataMeet and data.gov.in.
   category: postal
   level: pincode
   formats:
@@ -2467,7 +2483,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/remote-sensing/nightlights
 - name: soi-reference
   title: Survey of India Reference Data
-  description: Reference maps and boundary data from the Survey of India.
+  description: Survey of India topographic index maps, outline maps, and administrative
+    reference boundaries — the authoritative cartographic source for India.
   category: survey-of-india
   level: reference
   formats:
@@ -2931,7 +2948,8 @@
     download_url: https://github.com/yashveeeeeer/india-geodata/raw/main/data/survey-of-india/state-boundary/StateBoundary.shx
 - name: urban-localities
   title: Urban Localities
-  description: Locality-level boundaries and points within urban areas of India.
+  description: Neighbourhood and locality-level boundaries and point locations within
+    select Indian cities. From Delhi GIS and AMRUT Smart Cities data.
   category: urban
   level: locality
   formats:
@@ -2947,8 +2965,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/urban/boundaries
 - name: urban-municipal
   title: Municipal Boundaries
-  description: Boundaries of municipal corporations, municipalities, and town councils
-    across India.
+  description: Outer boundary polygons of municipal corporations, municipalities, and
+    town councils (Urban Local Bodies) across India. From DataMeet.
   category: urban
   level: municipal
   formats:
@@ -3673,7 +3691,8 @@
     download_url: https://github.com/yashveeeeeer/india-geodata/raw/main/data/urban/municipal-boundaries/vijayawada/Vijayawada_Wards.geojson
 - name: urban-slums
   title: Slum Boundaries
-  description: Boundaries of notified and identified slum areas in Indian cities.
+  description: Boundaries of notified and identified slum areas in select Indian cities,
+    from municipal GIS portals, Census 2011, and the National Building Organisation.
   category: urban
   level: slum
   formats:
@@ -3689,7 +3708,8 @@
   release_url: https://github.com/yashveeeeeer/india-geodata/releases/tag/urban/boundaries
 - name: urban-wards
   title: Municipal Wards
-  description: Ward-level boundaries of urban local bodies across India.
+  description: Municipal ward boundaries for 28 cities across India — the smallest
+    urban electoral and administrative unit. From SBM, AMRUT, and DataMeet.
   category: urban
   level: ward
   formats:
